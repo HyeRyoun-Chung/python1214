@@ -71,3 +71,10 @@ def userURIBuilder (server, port, **user):
 print(userURIBuilder("test.com", "8080", id = "kim", passwd = "1234"))
 print(userURIBuilder("test.com", "8080", id = "kim", passwd = "1234", name = "mike"))
 
+
+#람다함수(이름이 없는 간결한 함수 정의)
+g = lambda x,y:x*y
+print( g(3,4) )
+print( g(5,6))
+print ((lambda x:x*x)(3))
+print(globals())
