@@ -56,3 +56,18 @@ def union(*ar):
 
 print(union("HAM", "SPAM"))
 print(union("HAM", "SPAM", "EGG"))
+
+
+# *과 ** 차이는?
+# *는 가변만 있는 경우 즉, 필수인 arg가 없는 경우
+# **는 필수 + 옵션인 경우, 필수 arg는 앞쪽에 쓰고 옵션인 arg를 **로 묶어서 뒤쪽에 쓴다
+
+def userURIBuilder (server, port, **user):
+    str = "http://" + server + "." + port + "/?"
+    for key in user.keys():
+        str += key + "=" + user[key] + "&"
+    return str
+
+print(userURIBuilder("test.com", "8080", id = "kim", passwd = "1234"))
+print(userURIBuilder("test.com", "8080", id = "kim", passwd = "1234", name = "mike"))
+
