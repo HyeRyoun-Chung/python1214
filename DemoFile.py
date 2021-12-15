@@ -25,6 +25,9 @@
 # print("{0:,}".format(150000000))
 
 # 파일 쓰기(write text) 인코딩(유니코드)
+from os import path
+
+
 f = open("C:\\work\\demo.txt", "wt", encoding="utf-8")
 f.write("첫번째\n두번째\n세번째\n")
 f.close()
@@ -49,3 +52,30 @@ print(f.readline(), end="")
 f.seek(0)
 lst = f.readlines()
 print(lst)
+
+strA = "<<<   python is ver powerful   >>>"
+result = strA.strip("<> ")
+print(result)
+
+result2 = result.replace("python", "python egg")
+print(result2)
+print("demo.ppt".endswith("ppt"))
+print("MBC2580".isalnum())
+print("MBC:2580".isalnum())
+print("2580".isdecimal())
+
+print(result2.count("p"))
+# slicing해서 그 이후 구간부터 숫자  count
+print(result2.count("p", 7))
+
+print("--- 리스트 받기 ---")
+lst = result2.split()
+print(lst)
+print("---- 하나의 문자열 ---")
+print(":)".join(lst))
+
+#반복되는 문자열 생성
+names = ["전우치", "이순신", "김길동"]
+for name in names:
+    print("안녕하세요 {0}님 추운 겨울입니다.".format(name))
+    print("="*40)
